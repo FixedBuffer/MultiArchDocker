@@ -17,6 +17,4 @@ jobs:
           version: latest
       - name: build the image
       run: |
-        docker buildx build \
-          --tag fixedbuffer/multi-arch:action \
-          --platform linux/amd64,linux/arm/v7,linux/arm64 .
+        docker buildx build --tag fixedbuffer/multi-arch:action --platform linux/amd64,linux/arm/v7,linux/arm64 -f Dockerfile.multi .
